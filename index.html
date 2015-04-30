@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Coryat Score</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="bower_components/skeleton/images/favicon.png">
+
+
+    <script src="bower_components/react/react.js"></script>
+    <!-- No need for JSXTransformer! -->
+
+    <style>
+        h2 {
+            display: inline-block;
+        }
+        .score {
+            float: right;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        .scoreBox {
+            height: 80px;
+            /*border: 1px solid blue;*/
+            background-color: blue;
+            color: white;
+            text-align: center;
+            /*padding-top: 20px;*/
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+        .scoreBox.wrong {
+            background-color: darkred;
+        }
+        .scoreBox.skipped {
+            background-color: gray;
+        }
+        .scoreBox.correct {
+            background-color: green;
+        }
+        button {
+
+        }
+        a {
+            position: absolute;
+            top: 32px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+        a.correct {
+            right: 15px;
+            color: brightgreen;
+        }
+        a.skipped {
+            left: 50%;
+            margin-left: -5px;
+            color: lightgray;
+        }
+        a.wrong {
+            left: 15px;
+            color: red;
+        }
+    </style>
+</head>
+  <body>
+    <!-- <div id="example"></div> -->
+    
+  
+    <!-- <div class="container" id="scoreBoard"> -->
+    
+    <!-- </div> -->
+    
+    <script src="build/coryat.js"></script>
+</body>
+</html>
