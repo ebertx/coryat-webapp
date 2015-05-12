@@ -2,7 +2,20 @@ var cats = ["1", "2", "3", "4", "5", "6"];
 var amount1 = ["200", "400", "600", "800", "1000"];
 var amount2 = ["400", "800", "1200", "1600", "2000"];
 
-var ScoreBoard = React.createClass({
+var Coryat = React.createClass({
+    render: function() {
+        return (
+            <div className="container">
+                <h3>Coryat Score</h3>
+                <ScoreBoard1 amount={amount1} />
+                <br /><br />
+                <ScoreBoard2 amount={amount2} />
+            </div>
+        )
+    }
+});
+
+var ScoreBoard1 = React.createClass({
     getInitialState: function() {
         return { score: 0 };
     },
@@ -14,10 +27,10 @@ var ScoreBoard = React.createClass({
         // <CatRow items={cats} />
         var self = this;
         return (
-            <div className="container">
-                <h2>Coryat Score</h2>
+            <div>
+                <h2>Jeopardy</h2>
                 <Score score={self.state.score} />
-                
+                <hr />
                 <ScoreRow score={self.props.amount[0]} onUpdate={self.onUpdate} />
                 <ScoreRow score={self.props.amount[1]} onUpdate={self.onUpdate} />
                 <ScoreRow score={self.props.amount[2]} onUpdate={self.onUpdate} />
@@ -27,6 +40,33 @@ var ScoreBoard = React.createClass({
         );
     }
 });
+
+var ScoreBoard2 = React.createClass({
+    getInitialState: function() {
+        return { score: 0 };
+    },
+    onUpdate: function(valueChange) {
+        this.setState( {score: this.state.score + valueChange } );;
+        // console.log("scoreboard update: " + this.state.score);
+    },
+    render: function() {
+        // <CatRow items={cats} />
+        var self = this;
+        return (
+            <div>
+                <h2>Double Jeopardy</h2>
+                <Score score={self.state.score} />
+                <hr />
+                <ScoreRow score={self.props.amount[0]} onUpdate={self.onUpdate} />
+                <ScoreRow score={self.props.amount[1]} onUpdate={self.onUpdate} />
+                <ScoreRow score={self.props.amount[2]} onUpdate={self.onUpdate} />
+                <ScoreRow score={self.props.amount[3]} onUpdate={self.onUpdate} />
+                <ScoreRow score={self.props.amount[4]} onUpdate={self.onUpdate} />
+            </div>
+        );
+    }
+});
+
 
 var Score = React.createClass({
     render: function() {
@@ -121,6 +161,6 @@ var ScoreBox = React.createClass({
 });
 
 React.render(
-    <ScoreBoard amount={amount1} />,
+    <Coryat />,
     document.body
 );
